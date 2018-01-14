@@ -73,14 +73,21 @@ Our local system can be connected to AWS securely through SSH.
 SSH is a secure way to connect two shells through an unprotected network. A public key is used to connect through the internet to a component on the network. The private key is kept secret, never shared, but can be locally matched to a public key to identify the system is allowed to acces this SSH connection.
 
 To generate SSH, one must first use the terminal and open the bash shell. In Windows, git bash maybe used instead of the terminal used in Mac.
-keygen-ssh generates a token. The default method of creating a key is rsa, although there are other options.
+```
+keygen-ssh 
+```
+generates a token. The default method of creating a key is rsa, although there are other options.
 
 There might be cases in which one might need two separate public keys. 
 The first key maybe generated using:
+```
 ssh-keygen -t rsa 
+```
 
 The second can be created using the command
+```
 ssh-keygen -t rsa -f ~/.ssh/newname.pub
+```
 
 Once a key is created locally, the public key needs to be updated on AWS to connect securely to AWS.
 To do so, we login to the AWS account , open an EC2 instance , click on 'Key Pairs' on the left tab and paste the public key file's contents here and give a name to this pair.
@@ -110,12 +117,15 @@ This would give us a public IP address and a private address.
 
 ## Testing the SSH connection:
 Once the EC2 is setup and we are ready to connect to AWS from out local, we would get back on our bash terminal, and use the following command:
+```
+ssh username@ip 
+```
   - username from the AMI, public IP from EC2
 
 In case of two public keys, to use specific key.
-
+```
 ssh username@ip -i ~/.ssh/newpath
-
+```
 ## Docker 
 One of the problems in installing Jupyter R is the installation process, and how each package that needs to be installed has many dependencies that work differently on different systems.
 This means running a lot of commands, waiting for installation, updates etc. It is time consuming, requires debugging configuration files, and is not a standard repepatable process.
@@ -137,23 +147,27 @@ With a Windows OS however, Docker needs to first install a Debian version of the
 [Docker Installation](https://www.youtube.com/watch?v=UNoM8YIb08E&feature=youtu.be)
 
 Downloading install script from docker and piping to shell
+```
 Curl -sSL https://get.docker.com | sh
+```
 Security does not allow this, but we are comfortable doing this
 
 Sudo usermod -aG docker ubuntu
 Ctrl D - same as exit
 
 Reconnect/SSH to AWS
+```
 Docker -v
+```
 
 ## Obtaining the correct Docker image for Jupyter
 The Jupyter community is a mix of people from industry, Continnum Analytics and UC Berkeley who maintain a stable docker version of Jupyter, so as to make our life easy.
 
 [Using Docker Compose](https://towardsdatascience.com/jupyter-data-science-stack-docker-in-under-15-minutes-19d8f822bd45)
 The above is a way to put all the commands below in one file to run. But in order to understand , and tweak as needed, we will run the commands one by one.
-
+```
 Docker pull jupyter/datascience-notebook
-
+```
 ## Running the correct Docker image as a container
 Docker run -v /home/ubuntu:/home/jovyan -p 80:8888 -d jupyter/datascience-notebook
 
@@ -163,11 +177,13 @@ docker run -v /home/ubuntu:/home/jovyan -p 8888:8888 -d dsnb
 -p port on the Host OS is connected to the port on Docker
 
 Usually this is 8888:8888, but when in restricted networks that don't allow certain ports to be used, we work with what we have
-
+```
 Docker exec 304e jupyter notebook list
+```
 304e - first four letters of the string u get instead
 
 ## Some other Docker Commands
+```
 ps
 images
 logs
@@ -176,6 +192,7 @@ rm
 stats
 prune
 scp
+```
 
 Docker Hub :
 Docker Compose
