@@ -169,14 +169,15 @@ The above is a way to put all the commands below in one file to run. But in orde
 Docker pull jupyter/datascience-notebook
 ```
 ## Running the correct Docker image as a container
+```
 Docker run -v /home/ubuntu:/home/jovyan -p 80:8888 -d jupyter/datascience-notebook
-
-docker run -v /home/ubuntu:/home/jovyan -p 8888:8888 -d dsnb
+```
 -d means run in the background
 -v attaching docker-user to hostOS-user 
 -p port on the Host OS is connected to the port on Docker
 
 Usually this is 8888:8888, but when in restricted networks that don't allow certain ports to be used, we work with what we have
+This gives you a container ID which is used to refer it in any further commands on the container
 ```
 Docker exec 304e jupyter notebook list
 ```
@@ -186,6 +187,7 @@ Docker exec 304e jupyter notebook list
 ```
 ps
 images
+tags
 logs
 stop
 rm 
@@ -195,7 +197,7 @@ scp
 ```
 
 Docker Hub :
-Docker Compose
+Docker Compose :
 
 ## Jupyter notebook 
 security concerns
