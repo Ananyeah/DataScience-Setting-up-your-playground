@@ -40,7 +40,7 @@ For this setup, we go with R.
 
 ## Jupyter Notebook:
 
-It's possible to use R Studio, an IDE to work for R. But Jupyter notebook has become the preferred way to work with R, Python and a pleothora of other languages. Why?
+It's possible to use [R Studio](https://www.r-bloggers.com/setting-up-rstudio-server-quickly-on-amazon-ec2/) , an IDE to work for R. But Jupyter notebook has become the preferred way to work with R, Python and a pleothora of other languages. Why?
 
 - It's readable, where code, results, images, documentation can all be grouped in one place.
 - It can be shared and executed line by line on a browser through a neat interactive programming UI.
@@ -94,7 +94,6 @@ This is essentially what replaces our local system.
 [![How to AWS](http://img.youtube.com/vi/kVWMfdjYXnE/0.jpg)](https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be) 
 
 [EC2](https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be)
-
  
 ## AWS Operating System 
  To create an EC2 instance, we click 'Instances' on the left tab and first choose an AMI or image. We choose Ubuntu because Docker works well on Ubuntu.
@@ -118,7 +117,6 @@ In case of two public keys, to use specific key.
 ssh username@ip -i ~/.ssh/newpath
 
 ## Docker 
-
 One of the problems in installing Jupyter R is the installation process, and how each package that needs to be installed has many dependencies that work differently on different systems.
 This means running a lot of commands, waiting for installation, updates etc. It is time consuming, requires debugging configuration files, and is not a standard repepatable process.
 
@@ -127,22 +125,67 @@ Docker helps with this installation process, by making it standard , repeatable 
 
 Docker is a way of placing an application along with it's dependencies in a container, so when we install the docker version of an application, we install the container, which has both the app and it's dependencies already set up.
 
-Docker works better on Ubuntu as it is directly able to use Linux kernel processes that are needed by the application.
-With a Windows OS however, Docker needs to first install a Debian version of the OS onto Docker in order to run a docker app.
+It is also light-weight, only packaging the essentials for the app as opposed to a virtual machine, which is heavy.
+When running a ps command on Docker VS on a VM, this becomes evident.
 
+Docker works better on Ubuntu as it is directly able to use Linux kernel processes that are needed by the application.
+With a Windows OS however, Docker needs to first install a Debian version of the OS onto Docker.
+
+[Windows VS Ubuntu for Docker](http://floydhilton.com/docker/2017/03/31/Docker-ContainerHost-vs-ContainerOS-Linux-Windows.html)
+
+## Steps for Docker installation:
 [Docker Installation](https://www.youtube.com/watch?v=UNoM8YIb08E&feature=youtu.be)
 
-## Obtaining the correct Docker image
+Downloading install script from docker and piping to shell
+Curl -sSL https://get.docker.com | sh
+Security does not allow this, but we are comfortable doing this
 
+Sudo usermod -aG docker ubuntu
+Ctrl D - same as exit
+
+Reconnect/SSH to AWS
+Docker -v
+
+## Obtaining the correct Docker image for Jupyter
+The Jupyter community is a mix of people from industry, Continnum Analytics and UC Berkeley who maintain a stable docker version of Jupyter, so as to make our life easy.
+
+[Using Docker Compose](https://towardsdatascience.com/jupyter-data-science-stack-docker-in-under-15-minutes-19d8f822bd45)
+The above is a way to put all the commands below in one file to run. But in order to understand , and tweak as needed, we will run the commands one by one.
+
+Docker pull jupyter/datascience-notebook
 
 ## Running the correct Docker image as a container
+Docker run -v /home/ubuntu:/home/jovyan -p 80:8888 -d jupyter/datascience-notebook
 
-Jupyter notebook security concerns
+docker run -v /home/ubuntu:/home/jovyan -p 8888:8888 -d dsnb
+-d means run in the background
+-v attaching docker-user to hostOS-user 
+-p port on the Host OS is connected to the port on Docker
+
+Usually this is 8888:8888, but when in restricted networks that don't allow certain ports to be used, we work with what we have
+
+Docker exec 304e jupyter notebook list
+304e - first four letters of the string u get instead
+
+## Some other Docker Commands
+ps
+images
+logs
+stop
+rm 
+stats
+prune
+scp
+
+Docker Hub :
+Docker Compose
+
+## Jupyter notebook 
+security concerns
 [Launch Jupyter](https://www.youtube.com/watch?v=Jm5f14lR5rE&feature=youtu.be)
 
 ## Schema
-Anything else I may have forgotten ...
-Create at least one diagram of your overall system.
+
 
 ## Budget
 A detailed budget of the costs of running a Jupyter Data Science Notebook Server for three months using at least three different kinds of EC 2 instances.
