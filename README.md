@@ -46,10 +46,13 @@ It's possible to use R Studio, an IDE to work for R. But Jupyter notebook has be
 - It can be shared and executed line by line on a browser through a neat interactive programming UI.
 - It can be used as a template, that can be easily modified and debugged.
 
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
+Reference-style: 
+![alt text][logo]
 
-
-
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
 ## Setting up AWS EC2 and configuring it with Docker and Jupyter
 
