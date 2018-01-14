@@ -91,7 +91,7 @@ This sets up what's needed to connect a local to AWS.
  Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
 This is essentially what replaces our local system. 
 
-[![[How to AWS](http://img.youtube.com/vi/kVWMfdjYXnE/0.jpg)](https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be) {:target="_blank"}]
+[![[How to AWS](http://img.youtube.com/vi/kVWMfdjYXnE/0.jpg)](https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be)] {:target="_blank"}
  
 ## AWS Operating System 
  To create an EC2 instance, we click 'Instances' on the left tab and first choose an AMI or image. We choose Ubuntu because Docker works well on Ubuntu.
