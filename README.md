@@ -52,7 +52,7 @@ Inline-style:
 Reference-style: 
 ![alt text][logo]
 
-[logo]: (. https://github.com/Ananyeah/HowToAWS/blob/master/terminal.png =100x20) "Laptop with R installed"
+! [logo]: (./https://github.com/Ananyeah/HowToAWS/blob/master/terminal.png =100x20) "Laptop with R installed"
 
 ## Setting up AWS EC2 and configuring it with Docker and Jupyter
 
