@@ -53,7 +53,7 @@ It is possible to install Jupyter on bash on your local computer and get started
 But this has two main disadvantages:
 
 - First, you could get started and find out that your hardware resources are not enough, or your system requirements need to be changed.
-- Second, installation is a pain. You might need new packages and they might have conflicting dependencies, or multiple dependencies, or regular updates.
+- Second, installation is a pain. You might need new packages and they might have conflicting dependencies, or multiple dependencies, or need regular updates.
 - Another disadvantage could be moving across systems and having to repeat the installation process, maintaining configuration files.
 
 ## AWS Setup
@@ -91,6 +91,11 @@ This sets up what's needed to connect a local to AWS.
  Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
 This is essentially what replaces our local system. 
 
+<a href="https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be_embedded&v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"><img src="https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be" 
+alt="How to AWS - Part 1" width="240" height="180" border="10" /></a>
+https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be
+
  
 ## AWS Operating System 
  To create an EC2 instance, we click 'Instances' on the left tab and first choose an AMI or image. We choose Ubuntu because Docker works well on Ubuntu.
@@ -115,7 +120,21 @@ ssh username@ip -i ~/.ssh/newpath
 
 ## Docker 
 
-Obtaining the correct Docker image
+One of the problems in installing Jupyter R is the installation process, and how each package that needs to be installed has many dependencies that work differently on different systems.
+This means running a lot of commands, waiting for installation, updates etc. It is time consuming, requires debugging configuration files, and is not a standard repepatable process.
+
+Which is why we don't install Jupyter right on our laptop, or on Ubuntu(AWS), for that matter.
+Docker helps with this installation process, by making it standard , repeatable and quick.
+
+Docker is a way of placing an application along with it's dependencies in a container, so when we install the docker version of an application, we install the container, which has both the app and it's dependencies already set up.
+
+Docker works better on Ubuntu as it is directly able to use Linux kernel processes that are needed by the application.
+With a Windows OS however, Docker needs to first install a Debian version of the OS onto Docker in order to run a docker app.
+
+## Obtaining the correct Docker image
+
+
+
 Running the correct Docker image as a container
 
 ## Schema
