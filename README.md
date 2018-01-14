@@ -91,7 +91,10 @@ This sets up what's needed to connect a local to AWS.
  Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
 This is essentially what replaces our local system. 
 
-[![How to AWS](http://img.youtube.com/vi/kVWMfdjYXnE/0.jpg)](https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be/ "title"  target="_blank") 
+[![How to AWS](http://img.youtube.com/vi/kVWMfdjYXnE/0.jpg)](https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be) 
+
+[EC2](https://www.youtube.com/watch?v=kVWMfdjYXnE&feature=youtu.be)
+
  
 ## AWS Operating System 
  To create an EC2 instance, we click 'Instances' on the left tab and first choose an AMI or image. We choose Ubuntu because Docker works well on Ubuntu.
@@ -127,15 +130,17 @@ Docker is a way of placing an application along with it's dependencies in a cont
 Docker works better on Ubuntu as it is directly able to use Linux kernel processes that are needed by the application.
 With a Windows OS however, Docker needs to first install a Debian version of the OS onto Docker in order to run a docker app.
 
+[Docker Installation](https://www.youtube.com/watch?v=UNoM8YIb08E&feature=youtu.be)
+
 ## Obtaining the correct Docker image
 
 
-
-Running the correct Docker image as a container
-
-## Schema
+## Running the correct Docker image as a container
 
 Jupyter notebook security concerns
+[Launch Jupyter](https://www.youtube.com/watch?v=Jm5f14lR5rE&feature=youtu.be)
+
+## Schema
 Anything else I may have forgotten ...
 Create at least one diagram of your overall system.
 
