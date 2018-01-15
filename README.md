@@ -1,4 +1,4 @@
-# SETTING UP YOUR DATA SCIENCE PLAYGROUND
+# Setting Up Your Data Science Playground
 
 ## Data Science 
 
