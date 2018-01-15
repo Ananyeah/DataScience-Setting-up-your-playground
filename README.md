@@ -112,24 +112,24 @@ A VPC maybe configured to create a subnet that would allow sharing access to the
 ## Security Groups
  Security groups are used to configure the ports that need to be opened in order to talk to the different apps installed on AWS EC2.
 
-Once all these details are given, we can launch this instance, at which point we confirmthe name of the key pair we created to let us connect from the local.
+Once all these details are given, we can launch this instance, at which point we confirm the name of the key pair we created to let us connect from the local.
 
 This would give us a public IP address and a private address.
 
 ## Testing the SSH connection:
-Once the EC2 is setup and we are ready to connect to AWS from out local, we would get back on our bash terminal, and use the following command:
+Once the EC2 is setup and we are ready to connect to AWS from our local, we would get back on our bash terminal, and use the following command:
 ```
 ssh username@ip 
 ```
   - username from the AMI, public IP from EC2
 
-In case of two public keys, to use specific key.
+In case of two public keys, to use specific key:
 ```
 ssh username@ip -i ~/.ssh/newpath
 ```
 ## Docker 
 One of the problems in installing Jupyter R is the installation process, and how each package that needs to be installed has many dependencies that work differently on different systems.
-This means running a lot of commands, waiting for installation, updates etc. It is time consuming, requires debugging configuration files, and is not a standard repepatable process.
+This means running a lot of commands, waiting for installation, updates etc. It is time consuming, requires debugging configuration files, and is not a standard repeatable process.
 
 Which is why we don't install Jupyter right on our laptop, or on Ubuntu(AWS), for that matter.
 Docker helps with this installation process, by making it standard , repeatable and quick.
@@ -151,9 +151,10 @@ Downloading install script from docker and piping to shell
 ```
 Curl -sSL https://get.docker.com | sh
 ```
-Security does not allow this, but we are comfortable doing this
+There are some security questions raised while doing this, but we are comfortable doing this
 
 Sudo usermod -aG docker ubuntu
+
 Ctrl D - same as exit
 
 Reconnect/SSH to AWS
@@ -165,7 +166,7 @@ Docker -v
 The Jupyter community is a mix of people from industry, Continnum Analytics and UC Berkeley who maintain a stable docker version of Jupyter, so as to make our life easy.
 
 [Using Docker Compose](https://towardsdatascience.com/jupyter-data-science-stack-docker-in-under-15-minutes-19d8f822bd45)
-The above is a way to put all the commands below in one file to run. But in order to understand , and tweak as needed, we will run the commands one by one.
+This link shows a way to put all the commands below in one file to run. But in order to understand , and tweak as needed, we will run the commands one by one.
 ```
 Docker pull jupyter/datascience-notebook
 ```
@@ -174,7 +175,9 @@ Docker pull jupyter/datascience-notebook
 Docker run -v /home/ubuntu:/home/jovyan -p 80:8888 -d jupyter/datascience-notebook
 ```
 -d means run in the background
+
 -v attaching docker-user to hostOS-user 
+
 -p port on the Host OS is connected to the port on Docker
 
 Usually this is 8888:8888, but when in restricted networks that don't allow certain ports to be used, we work with what we have
