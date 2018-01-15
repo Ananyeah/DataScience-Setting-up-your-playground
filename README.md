@@ -185,7 +185,7 @@ This gives you a container ID which is used to refer it in any further commands 
 ```
 Docker exec 304e jupyter notebook list
 ```
-304e - first four letters of the conatiner ID - executing Jupyter notebook on the container.
+304e - first four letters of the container ID - executing Jupyter notebook on the container.
 
 ## Some other Docker Commands
 ```
@@ -208,7 +208,8 @@ Kubernetes : To automatically expand or remove running images as demanded by nee
 ## Jupyter notebook 
 [Launch Jupyter](https://www.youtube.com/watch?v=Jm5f14lR5rE&feature=youtu.be)
 
-Output from the exec command can be used to connect to Jupyter:
+Output from the exec command can be used to connect to Jupyter.
+'Localhost' is replaced with the public IP address of the EC2 instance when accessing the notebook from the browser.
 
 ```
 Currently running servers:
