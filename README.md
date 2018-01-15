@@ -181,7 +181,7 @@ This gives you a container ID which is used to refer it in any further commands 
 ```
 Docker exec 304e jupyter notebook list
 ```
-304e - first four letters of the string u get instead
+304e - first four letters of the conatiner ID - executing Jupyter notebook on the container.
 
 ## Some other Docker Commands
 ```
@@ -196,14 +196,22 @@ prune
 scp
 ```
 
-Docker Hub :
-Docker Compose :
+Docker Hub : Git Hub is for code, Docker hub is for docker images
+Docker Compose : To work across containers
+Kubernetes : To automatically expand or remove running images as demanded by need.
+
 
 ## Jupyter notebook 
-security concerns
 [Launch Jupyter](https://www.youtube.com/watch?v=Jm5f14lR5rE&feature=youtu.be)
 
-## Schema
+Output from the exec command can be used to connect to Jupyter:
+
+```
+Currently running servers:
+http://localhost:8888/?token=683b7579942d4454de4ac16bb09f53d51c605558d171011f :: /home/jovyan
+```
+
+## Overall Schema
 
 
 ## Budget
