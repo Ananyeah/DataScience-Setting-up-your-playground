@@ -218,4 +218,6 @@ Schema: ![Alt](https://github.com/Ananyeah/DataScience-Setting-up-your-playgroun
 ## Budget
 A detailed budget of the costs of running a Jupyter Data Science Notebook Server for three months using at least three different kinds of EC 2 instances.
 
+BUDGET: ![ALT](https://github.com/Ananyeah/DataScience-Setting-up-your-playground/blob/master/Screen%20Shot%202018-01-14%20at%205.20.36%20PM.png/ "TITLE")
+
 
