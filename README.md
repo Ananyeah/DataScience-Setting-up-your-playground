@@ -1,4 +1,5 @@
-# HowToAWS
+# SETTING UP YOUR DATA SCIENCE PLAYGROUND
+
 ## Data Science 
 
 Data science comprises of: 
