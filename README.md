@@ -212,7 +212,10 @@ http://localhost:8888/?token=683b7579942d4454de4ac16bb09f53d51c605558d171011f ::
 ```
 
 ## Overall Schema
+Schema: ![Alt](https://github.com/Ananyeah/DataScience-Setting-up-your-playground/blob/master/Screen%20Shot%202018-01-14%20at%204.28.42%20PM.png/ "Title")
 
 
 ## Budget
 A detailed budget of the costs of running a Jupyter Data Science Notebook Server for three months using at least three different kinds of EC 2 instances.
+
+
